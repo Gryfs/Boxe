@@ -14,7 +14,3 @@ input:focus, textarea:focus {
   outline: 2px solid #f97316; /* orange-500 */
 }
 
-* {
-  font-family: 'Bebas Neue', cursive;
-}
-

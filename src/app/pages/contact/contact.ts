@@ -22,7 +22,7 @@ export class Contact {
 
   onSubmit() {
     // gestion de la soumission du formulaire ici
-    this.submitted = true;
+    
     if (this.contactForm.valid) {
       this.sending = true;
       setTimeout(() => {
@@ -32,6 +32,8 @@ export class Contact {
         this.submitted = false;
         this.sending = false;
       }, 1500);
+    }else {
+      this.submitted = true;
     }
   }
 }

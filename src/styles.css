@@ -4,3 +4,7 @@
 .font-bebas {
   font-family: 'Bebas Neue', cursive !important;
 }
+
+* {
+  font-family: 'Bebas Neue', cursive;
+}
