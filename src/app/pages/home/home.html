@@ -1,2 +1,107 @@
-<h1>Bienvenue au Club de Boxe</h1>
-<p>Ce site vous présente les infos essentielles du club.</p>
+
+<!-- Component Angular -->
+<div class="min-h-screen bg-black text-white">
+    <!-- Hero Section avec image de fond -->
+    <div class="relative h-96 md:h-[350px] flex items-center justify-center">
+      <!-- Image de fond BoxeRing -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70">
+        <div class="w-full h-full bg-cover bg-center bg-no-repeat opacity-80" 
+             style="background-image: url('assets/images/BoxeRing.png');">
+        </div>
+      </div>
+      
+    <!-- Contenu Hero -->
+    <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+          <span class="text-orange-500">BOXING &nbsp;</span> 
+          <span class="text-white">CLUB &nbsp;</span> 
+          <span class="text-orange-500">BRÉVINOIS</span>
+          <p class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mr-14">2008</p>
+
+        </h1>
+      </div>
+    </div>
+  
+    <!-- Section Description -->
+    <div class="py-10 px-8 bg-black">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="text-lg md:text-xl leading-relaxed text-gray-300 font-medium tracking-wide">
+          LOREM, IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. IN VERITATIS SIT VOLUPTATEM DESERUNT EARUM, ALIAS, SIMILIQUE BLANDITIIS 
+          ULLAM LABORIOSAM ALIQUAM DOLOREM VITAE PRAESENTIUM, OBCAECATI NISL VOLUPTAS AMET PARIATUR HIC QUISQUAM.
+        </p>
+      </div>
+    </div>
+  
+    <!-- Section Coaches -->
+    <div class="py-2 px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <!-- Titre Section -->
+        <h2 class="text-3xl font-bold text-center mb-16 uppercase tracking-wider text-white">
+          Présentation des Coaches
+        </h2>
+        
+        <!-- Grid des coaches -->
+        <div class="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+          <!-- Boucle sur les coaches avec @for -->
+          @for (coach of coaches; track coach.name) {
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+              <!-- Image du coach -->
+              <div class="w-32 h-32 bg-gray-400 rounded-2xl flex-shrink-0 shadow-lg overflow-hidden">
+                <img [src]="coach.image" [alt]="coach.name" class="w-full h-full object-cover">
+              </div>
+              <!-- Nom -->
+              <div class="text-center md:text-left md:pt-8">
+                <h3 class="text-2xl font-bold uppercase tracking-wider">{{ coach.name }}</h3>
+                @if (coach.description) {
+                  <p class="text-gray-300 mt-2">{{ coach.description }}</p>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  
+    <!-- Section Informations Utiles -->
+    <div class="py-16 px-8 bg-black">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-red-900/60 rounded-2xl p-8 md:p-12 backdrop-blur-sm border border-red-800/30">
+          <h2 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white">
+            Informations Utiles :
+          </h2>
+          
+          <div class="space-y-6 text-gray-200">
+            <!-- Adresse -->
+            <div class="flex items-start gap-4">
+              <span class="text-orange-500 font-bold text-lg">•</span>
+              <div>
+                <span class="font-semibold uppercase">Adresse :</span>
+                <span class="ml-2">{{ clubInfo.address }}</span>
+              </div>
+            </div>
+            
+            <!-- Horaires -->
+            <div class="flex items-start gap-4">
+              <span class="text-orange-500 font-bold text-lg">•</span>
+              <div>
+                <span class="font-semibold uppercase">Horaires :</span>
+                <span class="ml-2">{{ clubInfo.schedules }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <footer class="py-8 px-8 bg-black border-t border-gray-800">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-3 text-blue-400">
+          <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+            <span class="text-white text-xs font-bold">©</span>
+          </div>
+          <span class="text-sm">Tout droits réservés, Boxing Club Brévinois ©</span>
+        </div>
+      </div>
+    </footer>
+  </div>
